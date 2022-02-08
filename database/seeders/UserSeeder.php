@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
 class UserSeeder extends Seeder
@@ -25,18 +26,22 @@ class UserSeeder extends Seeder
         $users = [
             [
                 'name' => 'Andy',
+                'surname' => 'ŞENTÜRK',
                 'email' => 'aliandac93@gmail.com',
                 'password' => '1q2w3e4r',
                 'remember_token' => Str::random(10),
+                'active' => 1,
             ]
         ];
 
         foreach ($users as $user){
             User::create([
                 'name' => $user['name'],
+                'surname' => $user['surname'],
                 'email' => $user['email'],
-                'password' => $user['password'],
+                'password' => Hash::make($user['password']),
                 'remember_token' => $user['remember_token'],
+                'active' => $user['active'],
             ]);
         }
 
