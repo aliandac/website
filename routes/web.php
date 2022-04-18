@@ -21,6 +21,10 @@ Route::get('/page', function () {
 
     return view('frontEnd.index');
 });
+Route::get('/adminpage', function () {
+
+    return view('admin.index');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
