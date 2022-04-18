@@ -13,7 +13,7 @@ class CreatedResumesCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('resumesCategories', function (Blueprint $table) {
+        Schema::create('resumes_categories', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreatedResumesCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('resumesCategories');
+        Schema::dropIfExists('resumes_categories');
     }
 }
